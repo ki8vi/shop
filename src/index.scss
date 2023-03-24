@@ -9,12 +9,11 @@ body {
   font-family: system-ui;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: rgba(45, 43, 38, 0.299);
+  background: rgba(10, 13, 24, 0.518);
 }
 .wrapper {
   background-color: #cfcfcff1;
-  // border-radius: 20px;
-  // box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 10px 20px rgba(22, 1, 1, 0.847);
   max-width: 1080px;
   margin: 0 auto;
 }
@@ -34,16 +33,16 @@ header {
     height: 50px;
     margin-right: 15px;
     }
+
   }
   .headerRight {
     display: flex;
     align-items: center;
     li {
-      margin-right: 20px;
+      margin-right: 30px;
       }
     span {
-      
-      margin-left: 5px;
+      margin-left: 2px;
       }
   }
 }
@@ -59,6 +58,7 @@ header {
     height: 170px;
     
   }
+  
   .card-button {
     display: flex;
     justify-content: space-between;

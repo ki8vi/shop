@@ -13,7 +13,7 @@ const Content = () => {
             <Card />
             <Card />
             <Card />
-            <Card />
+            
            
             </div>
         </div>
