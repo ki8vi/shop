@@ -1,21 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 *{
   margin: 0;
   box-sizing: border-box;
   text-decoration: none;
   list-style-type: none;
-
+  font-family: 'Oswald', sans-serif;
 }
 body {
-  font-family: system-ui;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: rgba(10, 13, 24, 0.518);
 }
+
 .wrapper {
   background-color: #cfcfcff1;
   box-shadow: 0px 10px 20px rgba(22, 1, 1, 0.847);
   max-width: 1080px;
   margin: 0 auto;
+  
 }
 
 header {
@@ -53,6 +55,12 @@ header {
   background-color: white;
   margin-right: 10px;
   margin-bottom: 10px;
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+  
+  &:hover {
+    box-shadow: 0px 14px 30px rgba(2, 2, 2, 0.559);
+    transform: translateY(-5px);
+  }
   img {
     width: 170px;
     height: 170px;
@@ -76,17 +84,79 @@ header {
 
 .content {
   padding: 40px;
-  
-  h1 {
-    margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 30px;
+
+  .search {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    border: 1px solid #afa8a8;
+    border-radius: 10px;
+    padding: 0 10px;
   }
-  
-  .content-card {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  input {
+    border: 0;
+    font-size: 15px;
+    padding:  3px;
   }
 }
+
+.content-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+ 
+}
+
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  .drawer {
+    position: absolute;
+    width: 350px;
+    height: 100%;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    
+    h2 {
+      font-size: 24px
+      
+    }
+    .drawer-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      border: 1px solid #f3f3f3;
+      border-radius: 15px;
+      padding: 10px;
+      img{
+        width: 70px;
+        height: 70px;
+        margin-right: 15px;
+      }
+      svg {
+        cursor: pointer;
+        opacity: 0.5;
+        transition: opacity 0.15s ease-in-out;
+        &:hover {
+          opacity: 1;
+        }
+      }
+      
+     
+    }
+  } 
+}
+
 
