@@ -1,4 +1,5 @@
 import { AiOutlineCloseCircle } from "react-icons/ai";
+
 const Drawer = () => {
   return (
     <div className="overlay">
@@ -23,6 +24,7 @@ const Drawer = () => {
               <b>25$</b>
             </li>
           </ul>
+          <button>Оформить заказ</button>
         </div>
       </div>
     </div>
