@@ -1,10 +1,11 @@
-import { GoPlus } from "react-icons/go"
+import { GoPlus } from "react-icons/go";
+import styles from "./Card.module.scss"
 const Card = () => {
     return (
-        <div className="card">
+        <div className={styles.card}>
             <img src="/img/laptop.jpeg" alt="item"/>
             <p>lenovo</p>
-            <div className="card-button">
+            <div className={styles.cardButton}>
                 <span>Цена:</span>
                 <b>1500$</b>
                 <button>

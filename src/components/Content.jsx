@@ -1,4 +1,4 @@
-import Card from "./Pages/Card";
+import Card from "./Pages/Card/Card";
 import { CiSearch } from "react-icons/ci"
 
 const Content = () => {

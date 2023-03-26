@@ -1,0 +1,69 @@
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    .drawer {
+      position: absolute;
+      width: 350px;
+      height: 100%;
+      right: 0;
+      background-color: #ffffff;
+      box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      overflow: auto;
+      h2 {
+        font-size: 24px
+        
+      }
+      .drawerItem {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: 1px solid #f3f3f3;
+        border-radius: 15px;
+        padding: 10px;
+        
+        img {
+          width: 70px;
+          height: 70px;
+          margin-right: 15px;
+        }
+        svg {
+          cursor: pointer;
+          opacity: 0.5;
+          transition: opacity 0.15s ease-in-out;
+          &:hover {
+            opacity: 1;
+          }
+        }
+       
+       
+      }
+    } 
+  }
+  
+  .items {
+    display: flex;
+    flex-direction: column;
+    
+    ul {
+      padding: 0;
+    }
+    button {
+      border-radius: 15px;
+      margin-top: 30px;
+      background-color: #d6cccc;
+      padding: 4px;
+      cursor: pointer;
+      border: 1px solid rgb(146, 146, 146);
+      &:hover {
+        background-color: rgba(71, 68, 68, 0.47);
+      }
+    }
+  }
