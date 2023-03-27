@@ -7,7 +7,7 @@ import "./index.scss"
 function App() {
   return (
     <div className="wrapper">
-      {/* <Drawer /> */}
+      <Drawer />
       <Header />
       <Content/>
     </div>
