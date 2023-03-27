@@ -1,0 +1,46 @@
+.card {
+  border: 1px solid #afa8a8;
+  padding: 30px;
+  width: 230px;
+  background-color: white;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  -webkit-transition: -webkit-box-shadow 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-box-shadow 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  -webkit-box-shadow: 0px 14px 30px rgba(2, 2, 2, 0.559);
+          box-shadow: 0px 14px 30px rgba(2, 2, 2, 0.559);
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+
+.card img {
+  width: 170px;
+  height: 170px;
+}
+
+.card .cardButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card button {
+  background: #ffffff;
+  border: 1px solid #f2f2f2;
+  border-radius: 8px;
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=Card.module.css.map */

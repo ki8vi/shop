@@ -1,0 +1,87 @@
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.overlay .drawer {
+  position: absolute;
+  width: 350px;
+  height: 100%;
+  right: 0;
+  background-color: #ffffff;
+  -webkit-box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+          box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  overflow: auto;
+}
+
+.overlay .drawer h2 {
+  font-size: 24px;
+}
+
+.overlay .drawer .drawerItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #f3f3f3;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.overlay .drawer .drawerItem img {
+  width: 70px;
+  height: 70px;
+  margin-right: 15px;
+}
+
+.overlay .drawer .drawerItem svg {
+  cursor: pointer;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.15s ease-in-out;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.overlay .drawer .drawerItem svg:hover {
+  opacity: 1;
+}
+
+.items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.items ul {
+  padding: 0;
+}
+
+.items button {
+  border-radius: 15px;
+  margin-top: 30px;
+  background-color: #d6cccc;
+  padding: 4px;
+  cursor: pointer;
+  border: 1px solid #929292;
+}
+
+.items button:hover {
+  background-color: rgba(71, 68, 68, 0.47);
+}
+/*# sourceMappingURL=Drawer.module.css.map */
