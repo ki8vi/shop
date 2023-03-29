@@ -1,7 +1,8 @@
 import Card from "./Pages/Card/Card";
 import { CiSearch } from "react-icons/ci"
 
-const Content = () => {
+const Content = ({items}) => {
+    
     return (
         <>
             <div className="content">
@@ -13,17 +14,17 @@ const Content = () => {
            
             </div>
             <div className="content-card">
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                {items.map((el) =>
+                   <Card 
+                    price={el.price}
+                    description={el.description}
+                    title={el.title}
+                    image={el.image}
+                    key={el.id}
+                   />
+                )}
+                
+              
             </div>
         </>
         

@@ -3,9 +3,7 @@ import { CgProfile } from "react-icons/cg";
 
 const Header = ({drawer, handle}) => {
   
-  const handleDrawer = () => {
-    handle(!drawer)
-  }
+  
     return (
     <header className="header">
         <div className="headerLeft">
@@ -16,7 +14,7 @@ const Header = ({drawer, handle}) => {
           </div>
         </div>
         <ul className="headerRight">
-          <li className="drawerBtn" onClick={handleDrawer}>
+          <li className="drawerBtn" onClick={handle}>
             <MdOutlineShoppingCart />
             <span>500$</span>
           </li>
