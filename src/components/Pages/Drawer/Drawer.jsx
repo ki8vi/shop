@@ -1,11 +1,18 @@
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import styles from "./Drawer.module.scss";
 
-const Drawer = () => {
+const Drawer = ({drawer, handle}) => {
+  const closeDrawer = () => {
+    
+    handle(!drawer)
+  }
   return (
     <div className={styles.overlay}>
       <div className={styles.drawer}>
-        <h2>Корзина</h2>
+        <div className={styles.drawerCancel} onClick={closeDrawer}>
+          <h2>Корзина</h2>
+          <AiOutlineCloseCircle />
+        </div>
         <div className={styles.drawerItem}>
           <img src="/img/laptop.jpeg" alt="drawer-item" />
           <div className="drawer-item-btn">

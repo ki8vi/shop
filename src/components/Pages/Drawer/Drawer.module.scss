@@ -45,6 +45,21 @@
        
        
       }
+      .drawerCancel {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        svg {
+          width: 25px;
+          height: 25px;
+          cursor: pointer;
+          opacity: 0.5;
+          transition: opacity 0.15s ease-in-out;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
     } 
   }
   

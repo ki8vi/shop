@@ -4,7 +4,8 @@ import styles from "./Card.module.scss"
 import React from "react";
 const Card = () => {
     const [isAdded, setIsAdded] = React.useState();
-   
+    
+    
     const setFavorite = () => {
         setIsAdded(!isAdded)
         

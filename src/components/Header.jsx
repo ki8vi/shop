@@ -1,7 +1,11 @@
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 
-const Header = () => {
+const Header = ({drawer, handle}) => {
+  
+  const handleDrawer = () => {
+    handle(!drawer)
+  }
     return (
     <header className="header">
         <div className="headerLeft">
@@ -12,7 +16,7 @@ const Header = () => {
           </div>
         </div>
         <ul className="headerRight">
-          <li>
+          <li className="drawerBtn" onClick={handleDrawer}>
             <MdOutlineShoppingCart />
             <span>500$</span>
           </li>
