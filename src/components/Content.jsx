@@ -6,7 +6,7 @@ const Content = ({items}) => {
     return (
         <>
             <div className="content">
-                <h1>Наша продукция</h1>
+                <h1>Welcome...</h1>
                 <div className="search">
                     <CiSearch />
                     <input placeholder="поиск..."/>

@@ -16,9 +16,9 @@ const Card = ({...el}) => {
         <div className={styles.card}>
             <img src={el.image} alt="img"/>
             <p>{el.title}</p>
+            {/* <span>{el.description}</span> */}
             <div className={styles.cardButton}>
-                <span>{el.description}</span>
-                <b>{el.price}</b>
+                <b>Price: {el.price} $</b>
                 <button onClick={setFavorite}>
                     {isAdded ? <FaCheck /> : <TiPlusOutline />}
                 </button>

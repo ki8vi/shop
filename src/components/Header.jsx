@@ -7,10 +7,10 @@ const Header = ({drawer, handle}) => {
     return (
     <header className="header">
         <div className="headerLeft">
-          <img src="https://img.freepik.com/free-vector/creative-computer-logo-template_23-2149213537.jpg?w=2000" alt="logo"/>
+          <img src="img/logo.jpg" alt="logo"/>
           <div className="headerInfo">
-            <h3>Shop</h3>
-            <p>Great computer shop</p>
+            <h3>Sheer Potreb Shop</h3>
+            {/* <p>Great place</p> */}
           </div>
         </div>
         <ul className="headerRight">

@@ -10,7 +10,7 @@ function App() {
   const [items, setItems] = React.useState([])
   
 React.useEffect(() => {
-  fetch('https://fakestoreapi.com/products/category/jewelery').then((res) => {
+  fetch('https://fakestoreapi.com/products').then((res) => {
     return res.json();
   }).then((json) => {
     setItems(json)
