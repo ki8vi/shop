@@ -10,6 +10,7 @@ const Header = ({drawer, handle}) => {
           <img src="img/logo.jpg" alt="logo"/>
           <div className="headerInfo">
             <h3>Sheer Potreb Shop</h3>
+            
             {/* <p>Great place</p> */}
           </div>
         </div>
