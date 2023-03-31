@@ -8,7 +8,7 @@ const Card = ({...el}) => {
     
     const setFavorite = () => {
         setIsAdded(!isAdded)
-        
+        el.addToDrawer()
     }
     
 
