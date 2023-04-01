@@ -2,7 +2,7 @@ import Card from "./Pages/Card/Card";
 import { CiSearch } from "react-icons/ci"
 
 
-const Content = ({items, addToDrawer}) => {
+const Content = ({items, addCart}) => {
     
     return (
         <>
@@ -22,7 +22,8 @@ const Content = ({items, addToDrawer}) => {
                     title={el.title}
                     image={el.image}
                     key={el.id}
-                    addToDrawer={addToDrawer}
+                    
+                    onPlus={(items) => addCart(items)}
                    />
                 )}
                 

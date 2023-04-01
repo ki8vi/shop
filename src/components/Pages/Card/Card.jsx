@@ -2,23 +2,25 @@ import { TiPlusOutline } from "react-icons/ti";
 import { FaCheck } from "react-icons/fa"
 import styles from "./Card.module.scss"
 import React from "react";
-const Card = ({...el}) => {
+const Card = ({image, title, price, addCart, onPlus}) => {
     const [isAdded, setIsAdded] = React.useState();
     
     
     const setFavorite = () => {
+        onPlus({image, title, price})
         setIsAdded(!isAdded)
-        el.addToDrawer()
-    }
+        
+    };
+    
     
 
     return (
         <div className={styles.card}>
-            <img src={el.image} alt="img"/>
-            <p>{el.title}</p>
+            <img src={image} alt="img"/>
+            <p>{title}</p>
             {/* <span>{el.description}</span> */}
             <div className={styles.cardButton}>
-                <b>Price: {el.price} $</b>
+                <b>Price: {price} $</b>
                 <button onClick={setFavorite}>
                     {isAdded ? <FaCheck /> : <TiPlusOutline />}
                 </button>

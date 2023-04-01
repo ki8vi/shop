@@ -1,8 +1,9 @@
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import styles from "./Drawer.module.scss";
 
-const Drawer = ({handle, cart= []}) => {
- 
+const Drawer = ({handle, cart=[]}) => {
+
+
 
 
   return (
@@ -14,14 +15,17 @@ const Drawer = ({handle, cart= []}) => {
         </div>
         {cart.map(el => (
           <div className={styles.drawerItem}>
-            <img src={el.image} alt="drawer-item" />
+            <img src={el.image} alt="drawer-item"/>
             <div className="drawer-item-btn">
               <p>{el.title}</p>
               <b>{el.price}</b>
             </div>
             <AiOutlineCloseCircle />
           </div>
-        ))}
+          
+        )
+          
+        )}
         
 
         <div className={styles.items}>

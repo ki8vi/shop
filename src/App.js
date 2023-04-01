@@ -10,9 +10,7 @@ function App() {
   const [items, setItems] = React.useState([])
   const [cartDrawer, setCartDrawer] = React.useState([])
 
-  const addToDrawer = () => {
-    setCartDrawer([...items, cartDrawer])
-  }
+
   
 React.useEffect(() => {
   fetch('https://fakestoreapi.com/products').then((res) => {
@@ -20,13 +18,19 @@ React.useEffect(() => {
   }).then((json) => {
     setItems(json)
   })
-}, [])
+}, []);
+
+const addCart = (obj) => {
+  setCartDrawer(prev => [...prev, obj])
+  
+}
+
 
   return (
     <div className="wrapper" >
-     {isDrawer && <Drawer drawer = {isDrawer} handle= {()=>setIsDrawer(!isDrawer)} cart = {cartDrawer}/>}
+     {isDrawer && <Drawer drawer = {isDrawer} handle= {()=>setIsDrawer(!isDrawer)} cart={cartDrawer}/>}
       <Header drawer = {isDrawer} handle = {()=> setIsDrawer(!isDrawer)}/>
-      <Content items= {items} addToDrawer={addToDrawer}/>
+      <Content items= {items} addCart={addCart}/>
     </div>
   );
 }
