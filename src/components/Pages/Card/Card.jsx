@@ -2,12 +2,13 @@ import { TiPlusOutline } from "react-icons/ti";
 import { FaCheck } from "react-icons/fa"
 import styles from "./Card.module.scss"
 import React from "react";
-const Card = ({image, title, price, addCart, onPlus}) => {
+
+const Card = ({image, title, price, id, onPlus}) => {
     const [isAdded, setIsAdded] = React.useState();
     
     
     const setFavorite = () => {
-        onPlus({image, title, price})
+        onPlus({image, title, price, id})
         setIsAdded(!isAdded)
         
     };

@@ -17,6 +17,7 @@ const Content = ({items, addCart}) => {
             <div className="content-card">
                 {items.map((el) =>
                    <Card 
+                    id={el.id}
                     price={el.price}
                     description={el.description}
                     title={el.title}

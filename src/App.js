@@ -25,10 +25,14 @@ const addCart = (obj) => {
   
 }
 
+const removeCart = () => {
+  setCartDrawer([])
+}
+
 
   return (
     <div className="wrapper" >
-     {isDrawer && <Drawer drawer = {isDrawer} handle= {()=>setIsDrawer(!isDrawer)} cart={cartDrawer}/>}
+     {isDrawer && <Drawer drawer = {isDrawer} handle= {()=>setIsDrawer(!isDrawer)} cart={cartDrawer} removeCart={removeCart}/>}
       <Header drawer = {isDrawer} handle = {()=> setIsDrawer(!isDrawer)}/>
       <Content items= {items} addCart={addCart}/>
     </div>
