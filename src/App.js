@@ -14,7 +14,7 @@ function App() {
 
   const onChangeSearch = (e) => {
     setSearch(e.target.value)
-    console.log(e.target.value)
+    
   }
 
 
@@ -39,9 +39,9 @@ const removeCart = () => {
 
   return (
     <div className="wrapper" >
-     {isDrawer && <Drawer drawer = {isDrawer} handle= {()=>setIsDrawer(!isDrawer)} cart={cartDrawer} removeCart={removeCart}/>}
+    {isDrawer && <Drawer drawer = {isDrawer} handle= {()=>setIsDrawer(!isDrawer)} cart={cartDrawer} removeCart={removeCart}/>}
     <Header drawer = {isDrawer} handle = {()=> setIsDrawer(!isDrawer)}/>
-    <Content items= {items} addCart={addCart} onChangeSearch={onChangeSearch}/> 
+    <Content items= {items} addCart={addCart} onChangeSearch={onChangeSearch} search={search} setSearch={setSearch} /> 
     </div>
   );
 }
