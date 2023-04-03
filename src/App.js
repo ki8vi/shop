@@ -9,6 +9,13 @@ function App() {
   const [isDrawer, setIsDrawer] = React.useState()
   const [items, setItems] = React.useState([])
   const [cartDrawer, setCartDrawer] = React.useState([])
+  const [search, setSearch] = React.useState('')
+
+
+  const onChangeSearch = (e) => {
+    setSearch(e.target.value)
+    console.log(e.target.value)
+  }
 
 
   
@@ -33,8 +40,8 @@ const removeCart = () => {
   return (
     <div className="wrapper" >
      {isDrawer && <Drawer drawer = {isDrawer} handle= {()=>setIsDrawer(!isDrawer)} cart={cartDrawer} removeCart={removeCart}/>}
-      <Header drawer = {isDrawer} handle = {()=> setIsDrawer(!isDrawer)}/>
-      <Content items= {items} addCart={addCart}/>
+    <Header drawer = {isDrawer} handle = {()=> setIsDrawer(!isDrawer)}/>
+    <Content items= {items} addCart={addCart} onChangeSearch={onChangeSearch}/> 
     </div>
   );
 }

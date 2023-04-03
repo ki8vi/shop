@@ -2,7 +2,7 @@ import Card from "./Pages/Card/Card";
 import { CiSearch } from "react-icons/ci"
 
 
-const Content = ({items, addCart}) => {
+const Content = ({items, addCart, onChangeSearch}) => {
     
     return (
         <>
@@ -10,7 +10,7 @@ const Content = ({items, addCart}) => {
                 <h1>Welcome...</h1>
                 <div className="search">
                     <CiSearch />
-                    <input placeholder="поиск..."/>
+                    <input placeholder="поиск..." onChange={onChangeSearch}/>
                 </div>
            
             </div>
