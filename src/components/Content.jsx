@@ -11,13 +11,12 @@ const Content = ({items, addCart, onChangeSearch, search, setSearch}) => {
                 <div className="search">
                     <CiSearch />
                     <input placeholder="поиск..." onChange={onChangeSearch} value={search}/>
-                   {search && <MdCancel  onClick={()=>setSearch("")} style={{cursor: "pointer"}}/>}
+                    {search && <MdCancel  onClick={()=>setSearch("")} style={{cursor: "pointer"}}/>}
                 </div>
-           
             </div>
             <div className="content-card">
-                {items.map((el) =>
-                   <Card 
+                {items.filter((item) => item.title.toLowerCase().includes(search.toLowerCase())).map((el) =>
+                    <Card 
                     id={el.id}
                     price={el.price}
                     description={el.description}
@@ -25,11 +24,10 @@ const Content = ({items, addCart, onChangeSearch, search, setSearch}) => {
                     image={el.image}
                     key={el.id}
                     
-                    onPlus={(items) => addCart(items)}
-                   />
+                    onPlus={(obj) =>addCart(obj)}
+                    />
                 )}
                 
-              
             </div>
         </>
         

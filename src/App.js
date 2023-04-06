@@ -14,7 +14,7 @@ function App() {
 
   const onChangeSearch = (e) => {
     setSearch(e.target.value)
-    console.log(e.target.value)
+
     
   }
 
@@ -29,12 +29,18 @@ React.useEffect(() => {
 }, []);
 
 const addCart = (obj) => {
-  setCartDrawer(prev => [...prev, obj])
   
+      
+      setCartDrawer(prev => [...prev, obj])
+    
+  
+
 }
 
-const removeCart = () => {
-  setCartDrawer(cartDrawer.map((el, i) => el.id === i ))
+const removeCart = (obj) => {
+  setCartDrawer([])
+ 
+   
 }
 
 
