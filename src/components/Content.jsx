@@ -10,8 +10,8 @@ const Content = ({items, addCart, onChangeSearch, search, setSearch}) => {
                 {search ? <h1>Поиск по: {search}</h1> : <h1>Welcome...</h1>}
                 <div className="search">
                     <CiSearch />
-                    <input placeholder="поиск..." onChange={onChangeSearch}/>
-                   {/* {search && <MdCancel  onClick={setSearch("")} style={{cursor: "pointer"}}/>} */}
+                    <input placeholder="поиск..." onChange={onChangeSearch} value={search}/>
+                   {search && <MdCancel  onClick={()=>setSearch("")} style={{cursor: "pointer"}}/>}
                 </div>
            
             </div>

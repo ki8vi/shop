@@ -14,6 +14,7 @@ function App() {
 
   const onChangeSearch = (e) => {
     setSearch(e.target.value)
+    console.log(e.target.value)
     
   }
 
@@ -33,7 +34,7 @@ const addCart = (obj) => {
 }
 
 const removeCart = () => {
-  setCartDrawer([])
+  setCartDrawer(cartDrawer.map((el, i) => el.id === i ))
 }
 
 
