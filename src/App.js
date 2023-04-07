@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Drawer from "./components/Pages/Drawer/Drawer";
 import "./index.scss";
 import React from "react";
-
+import axios from "axios"
 function App() {
   const [isDrawer, setIsDrawer] = React.useState()
   const [items, setItems] = React.useState([])
@@ -26,19 +26,31 @@ React.useEffect(() => {
   }).then((json) => {
     setItems(json)
   })
+
+  // axios.get("https://64245d6647401740433a27a0.mockapi.io/items")
+  // .then((res) => {
+  //   setItems(res.data)
+  // })
+
 }, []);
 
-const addCart = (obj) => {
-  
-      
-      setCartDrawer(prev => [...prev, obj])
-    
-  
 
+
+const addCart = (obj) => {
+  let isInArr = false
+  cartDrawer.forEach(el => {
+    if(el.id === obj.id) {
+      isInArr = true
+    }
+    
+  })
+    if (!isInArr) {
+      setCartDrawer(prev => [...prev, obj]) 
+    }
 }
 
-const removeCart = (obj) => {
-  setCartDrawer([])
+const removeCart = (id) => {
+  setCartDrawer((prev) => prev.filter(el => el.id !== id))
  
    
 }

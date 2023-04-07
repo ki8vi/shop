@@ -13,17 +13,17 @@ const Drawer = ({handle, cart=[], removeCart}) => {
           <h2>Корзина</h2>
           <AiOutlineCloseCircle />
         </div>
-        {cart.map((el) => (
-          <div className={styles.drawerItem} key={el.id}>
+        {cart.map((el, i) => ( 
+          <div key={i} className={styles.drawerItem} >
             <img src={el.image} alt="drawer-item"/>
-            <div className="drawer-item-btn">
+            <div className="drawer-item-btn" >
               <p>{el.title}</p>
               <b>{el.price}</b>
             </div>
-            <AiOutlineCloseCircle onClick={removeCart}/>
+            <AiOutlineCloseCircle onClick={() => removeCart(el.id)}/>
           </div>
           
-        )
+          )
           
         )}
         
