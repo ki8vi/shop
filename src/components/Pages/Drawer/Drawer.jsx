@@ -10,7 +10,7 @@ const Drawer = ({handle, cart=[], removeCart}) => {
     <div className={styles.overlay} onClick={()=>handle(false)} >
       <div className={styles.drawer} onClick={e => e.stopPropagation()}>
         <div className={styles.drawerCancel} onClick={handle}>
-          <h2>Корзина</h2>
+          {cart.length ? <h2>В корзине товаров: {cart.length}</h2> : <h2>В корзине ничего нет</h2>}
           <AiOutlineCloseCircle />
         </div>
         {cart.map((el, i) => ( 

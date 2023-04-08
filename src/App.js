@@ -18,25 +18,28 @@ function App() {
     
   }
 
+//axios.get('https://64245d6647401740433a27a0.mockapi.io/items')
+  
 
   
 React.useEffect(() => {
-  fetch('https://fakestoreapi.com/products').then((res) => {
-    return res.json();
-  }).then((json) => {
-    setItems(json)
-  })
-
-  // axios.get("https://64245d6647401740433a27a0.mockapi.io/items")
-  // .then((res) => {
-  //   setItems(res.data)
+  // fetch('https://fakestoreapi.com/products').then((res) => {
+  //   return res.json();
+  // }).then((json) => {
+  //   setItems(json)
   // })
+
+  axios.get('https://fakestoreapi.com/products')
+  .then((res) => {
+    setItems(res.data)
+  })
 
 }, []);
 
 
 
 const addCart = (obj) => {
+  
   let isInArr = false
   cartDrawer.forEach(el => {
     if(el.id === obj.id) {
@@ -50,6 +53,7 @@ const addCart = (obj) => {
 }
 
 const removeCart = (id) => {
+  
   setCartDrawer((prev) => prev.filter(el => el.id !== id))
  
    
