@@ -4,14 +4,30 @@ import Header from "./components/Header";
 import Drawer from "./components/Pages/Drawer/Drawer";
 import "./index.scss";
 import React from "react";
-import axios from "axios"
+import axios from "axios";
+import {Routes, Route} from "react-router-dom"
+import Favorite from "./components/Pages/Favorite/Favorite";
+
+
 function App() {
   const [isDrawer, setIsDrawer] = React.useState()
   const [items, setItems] = React.useState([])
   const [cartDrawer, setCartDrawer] = React.useState([])
+  const [favor, setFavor] = React.useState([])
   const [search, setSearch] = React.useState('')
 
-
+  const addFavor = (obj) => {
+    let isIn = true
+    favor.forEach(el => {
+      if(el.id === obj.id) {
+        isIn = false
+      }
+    })
+      if (isIn) {
+        setFavor(prev => [...prev, obj])
+      }
+    
+  }
   const onChangeSearch = (e) => {
     setSearch(e.target.value)
 
@@ -65,8 +81,15 @@ const removeCart = (id) => {
   return (
     <div className="wrapper" >
     {isDrawer && <Drawer drawer = {isDrawer} handle= {()=>setIsDrawer(!isDrawer)} cart={cartDrawer} removeCart={removeCart} totalSum={totalSum} /> }
-    <Header drawer = {isDrawer} handle = {()=> setIsDrawer(!isDrawer)}/>
-    <Content items= {items} addCart={addCart} onChangeSearch={onChangeSearch} search={search} setSearch={setSearch} /> 
+    
+      <Header drawer = {isDrawer} handle = {()=> setIsDrawer(!isDrawer)}/>
+      {/* <Content items= {items} addCart={addCart} onChangeSearch={onChangeSearch} search={search} setSearch={setSearch} addFavor={addFavor}/> */}
+    <Routes> 
+      <Route path="/" element=<Content items= {items} addCart={addCart} onChangeSearch={onChangeSearch} search={search} setSearch={setSearch} addFavor={addFavor}/> />
+      <Route path="/favorite" element=<Favorite favor={favor}/>/>
+    </Routes>
+    
+    
     </div>
   );
 }
