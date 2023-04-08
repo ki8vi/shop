@@ -1,7 +1,7 @@
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import styles from "./Drawer.module.scss";
 
-const Drawer = ({handle, cart=[], removeCart}) => {
+const Drawer = ({handle, cart=[], removeCart, totalSum}) => {
 
   
 
@@ -32,7 +32,7 @@ const Drawer = ({handle, cart=[], removeCart}) => {
           <ul>
             <li>
               <span>Итого:</span>
-              <b>500$</b>
+              <b>{totalSum}</b>
             </li>
             <li>
               <span>Налог 5%:</span>

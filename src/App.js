@@ -21,7 +21,7 @@ function App() {
 //axios.get('https://64245d6647401740433a27a0.mockapi.io/items')
   
 
-  
+
 React.useEffect(() => {
   // fetch('https://fakestoreapi.com/products').then((res) => {
   //   return res.json();
@@ -37,9 +37,11 @@ React.useEffect(() => {
 }, []);
 
 
-
+let totalSum = 0  
 const addCart = (obj) => {
   
+  totalSum += obj.price
+
   let isInArr = false
   cartDrawer.forEach(el => {
     if(el.id === obj.id) {
@@ -62,7 +64,7 @@ const removeCart = (id) => {
 
   return (
     <div className="wrapper" >
-    {isDrawer && <Drawer drawer = {isDrawer} handle= {()=>setIsDrawer(!isDrawer)} cart={cartDrawer} removeCart={removeCart}/>}
+    {isDrawer && <Drawer drawer = {isDrawer} handle= {()=>setIsDrawer(!isDrawer)} cart={cartDrawer} removeCart={removeCart} totalSum={totalSum} /> }
     <Header drawer = {isDrawer} handle = {()=> setIsDrawer(!isDrawer)}/>
     <Content items= {items} addCart={addCart} onChangeSearch={onChangeSearch} search={search} setSearch={setSearch} /> 
     </div>
