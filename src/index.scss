@@ -6,17 +6,19 @@
   list-style-type: none;
   font-family: 'Oswald', sans-serif;
 }
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: rgba(10, 13, 24, 0.518);
+  
 }
 
 .wrapper {
   background-color: #cfcfcff1;
   box-shadow: 0px 10px 20px rgba(22, 1, 1, 0.847);
   max-width: 1080px;
-  margin: 0 auto;
+  margin: 0  auto;
   border-radius: 25px;
 }
 
@@ -76,7 +78,7 @@ header {
   align-items: center;
   justify-content: space-between;
   margin: 0 30px;
-
+  
   .search {
     display: flex;
     align-items: center;
@@ -105,7 +107,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
- 
+  
 }
 
 

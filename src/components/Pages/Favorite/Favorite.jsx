@@ -1,9 +1,12 @@
 import Card from "../Card/Card";
 
 const Favorite = ({favor}) => {
-
+    
     return (
+        <>
+        {favor.length ? <h1 className="content">Избранное: {favor.length}</h1> : <h1 className="content">Вы ничего не добавили в избранное</h1>}
         <div className="content-card">{favor.map(el => 
+        
             <Card 
                 id={el.id}
                 price={el.price}
@@ -11,7 +14,9 @@ const Favorite = ({favor}) => {
                 image={el.image}
                 key={el.id}
             />
-        )}</div>
+        )}
+        </div>
+        </>
     )
 }
 export default Favorite;
