@@ -33,6 +33,7 @@ function App() {
       setFavor(prev => [...prev, obj])
     }
   }
+  
   const onChangeSearch = (e) => {
     setSearch(e.target.value)
 
