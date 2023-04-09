@@ -1,7 +1,7 @@
 import Card from "../Card/Card";
 
-const Favorite = ({favor}) => {
-    
+const Favorite = ({favor, addFavor}) => {
+   
     return (
         <>
         {favor.length ? <h1 className="content">Избранное: {favor.length}</h1> : <h1 className="content">Вы ничего не добавили в избранное</h1>}
@@ -13,6 +13,9 @@ const Favorite = ({favor}) => {
                 title={el.title}
                 image={el.image}
                 key={el.id}
+                favorited={true}
+                addFavor={addFavor}
+                
             />
         )}
         </div>

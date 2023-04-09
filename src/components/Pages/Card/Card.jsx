@@ -5,9 +5,11 @@ import React from "react";
 import {FcLike, FcLikePlaceholder} from "react-icons/fc";
 
 
-const Card = ({image, title, price, id, onPlus, addFavor}) => {
+    
+    const Card = ({image, title, price, id, onPlus, addFavor,  favorited}) => {
+    
     const [isAdded, setIsAdded] = React.useState();
-    const [isFavor, setIsFavor] = React.useState();
+    const [isFavor, setIsFavor] = React.useState(favorited);
 
     const iLike = () => {
         setIsFavor(!isFavor);

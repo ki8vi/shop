@@ -17,16 +17,21 @@ function App() {
   const [search, setSearch] = React.useState('')
 
   const addFavor = (obj) => {
-    let isIn = true
-    favor.forEach(el => {
-      if(el.id === obj.id) {
-        isIn = false
-      }
-    })
-      if (isIn) {
-        setFavor(prev => [...prev, obj])
-      }
+    // let isIn = true
+    // favor.forEach(el => {
+    //   if(el.id === obj.id) {
+    //     isIn = false
+    //   }
+    // })
+    //   if (isIn) {
+    //     setFavor(prev => [...prev, obj])
+    //   }
     
+    if(favor.find((favObj) => favObj.id === obj.id)) {
+      setFavor((prev) => prev.filter(el => el.id !== obj.id))
+    } else {
+      setFavor(prev => [...prev, obj])
+    }
   }
   const onChangeSearch = (e) => {
     setSearch(e.target.value)
@@ -86,7 +91,7 @@ const removeCart = (id) => {
       {/* <Content items= {items} addCart={addCart} onChangeSearch={onChangeSearch} search={search} setSearch={setSearch} addFavor={addFavor}/> */}
     <Routes> 
       <Route path="/" element=<Content items= {items} addCart={addCart} onChangeSearch={onChangeSearch} search={search} setSearch={setSearch} addFavor={addFavor}/> />
-      <Route path="/favorite" element=<Favorite favor={favor}/>/>
+      <Route path="/favorite" element=<Favorite favor={favor} addFavor={addFavor} addCart={addCart}/>/>
     </Routes>
     
     
