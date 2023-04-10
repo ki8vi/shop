@@ -23,7 +23,7 @@ const Content = ({items, addCart, onChangeSearch, search, setSearch, addFavor, }
                     title={el.title}
                     image={el.image}
                     key={el.id}
-                    
+                    loading = {false}
                     onPlus={(obj) =>addCart(obj)}
                     addFavor={(obj)=>addFavor(obj)}
                     />
