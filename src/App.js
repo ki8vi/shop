@@ -36,14 +36,9 @@ function App() {
   
   const onChangeSearch = (e) => {
     setSearch(e.target.value)
-
     
   }
-
 //axios.get('https://64245d6647401740433a27a0.mockapi.io/items')
-  
-
-
 React.useEffect(() => {
   // fetch('https://fakestoreapi.com/products').then((res) => {
   //   return res.json();
@@ -58,28 +53,32 @@ React.useEffect(() => {
 
 }, []);
 
-
 let totalSum = 0  
+
 const addCart = (obj) => {
   
-  totalSum += obj.price
+  // totalSum += obj.price
 
-  let isInArr = false
-  cartDrawer.forEach(el => {
-    if(el.id === obj.id) {
-      isInArr = true
-    }
+  // let isInArr = false
+  // cartDrawer.forEach(el => {
+  //   if(el.id === obj.id) {
+  //     isInArr = true
+  //   }
     
-  })
-    if (!isInArr) {
-      setCartDrawer(prev => [...prev, obj]) 
-    }
+  // })
+  //   if (!isInArr) {
+  //     setCartDrawer(prev => [...prev, obj]) 
+  //   }
+  if(cartDrawer.find((item) => item.id === obj.id)) {
+    setCartDrawer((prev) => prev.filter(el => el.id !== obj.id))
+  } else {
+    setCartDrawer(prev => [...prev, obj])
+  }
 }
 
 const removeCart = (id) => {
   
   setCartDrawer((prev) => prev.filter(el => el.id !== id))
- 
    
 }
 
