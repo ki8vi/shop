@@ -1,8 +1,11 @@
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import styles from "./Drawer.module.scss";
+import { Context } from "../../../context";
+import React from "react";
+
 
 const Drawer = ({handle, cart=[], removeCart, totalSum}) => {
-
+//const context = React.useContext(Context)
   
 
 

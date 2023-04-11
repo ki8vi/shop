@@ -7,6 +7,7 @@ import React from "react";
 import axios from "axios";
 import {Routes, Route} from "react-router-dom"
 import Favorite from "./components/Pages/Favorite/Favorite";
+import { Context } from "./context";
 
 
 function App() {
@@ -53,7 +54,7 @@ React.useEffect(() => {
 
 }, []);
 
-let totalSum = 0  
+let totalSum = 0
 
 const addCart = (obj) => {
   
@@ -73,6 +74,7 @@ const addCart = (obj) => {
     setCartDrawer((prev) => prev.filter(el => el.id !== obj.id))
   } else {
     setCartDrawer(prev => [...prev, obj])
+    totalSum += obj.price
   }
 }
 
@@ -81,14 +83,16 @@ const removeCart = (id) => {
   setCartDrawer((prev) => prev.filter(el => el.id !== id))
    
 }
-
+const isItemAdded = (id) => {
+  return cartDrawer.some(obj => obj.id === id)
+}
 
   return (
+    <Context.Provider value={{items, cartDrawer, favor, isItemAdded}}>
     <div className="wrapper" >
     {isDrawer && <Drawer drawer = {isDrawer} handle= {()=>setIsDrawer(!isDrawer)} cart={cartDrawer} removeCart={removeCart} totalSum={totalSum} /> }
     
       <Header drawer = {isDrawer} handle = {()=> setIsDrawer(!isDrawer)}/>
-      {/* <Content items= {items} addCart={addCart} onChangeSearch={onChangeSearch} search={search} setSearch={setSearch} addFavor={addFavor}/> */}
     <Routes> 
       <Route path="/" element=<Content items= {items} addCart={addCart} onChangeSearch={onChangeSearch} search={search} setSearch={setSearch} addFavor={addFavor}/> />
       <Route path="/favorite" element=<Favorite favor={favor} addFavor={addFavor} addCart={addCart}/>/>
@@ -96,6 +100,7 @@ const removeCart = (id) => {
     
     
     </div>
+    </Context.Provider>
   );
 }
 

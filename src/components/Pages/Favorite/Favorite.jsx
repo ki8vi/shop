@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import Card from "../Card/Card";
+import { Context } from "../../../context";
 
-const Favorite = ({favor, addFavor}) => {
-   
+
+const Favorite = ({addFavor}) => {
+const {favor} = useContext(Context)
+console.log(favor)
     return (
         <>
         {favor.length ? <h1 className="content">Избранное: {favor.length}</h1> : <h1 className="content">Вы ничего не добавили в избранное</h1>}
