@@ -5,9 +5,15 @@ import React from "react";
 
 
 const Drawer = ({handle, cart=[], removeCart, totalSum}) => {
-//const context = React.useContext(Context)
-  
+const {cartDrawer, setCartDrawer} = React.useContext(Context)
+const [order, setOrder] = React.useState()
 
+const orderComplete = () => {
+  setCartDrawer([]);
+  if(cartDrawer.length !== 0) {
+    setOrder(true)
+  }
+}
 
   return (
     <div className={styles.overlay} onClick={()=>handle(false)} >
@@ -42,8 +48,14 @@ const Drawer = ({handle, cart=[], removeCart, totalSum}) => {
               <b>25$</b>
             </li>
           </ul>
-          <button>Оформить заказ</button>
+          <button onClick={orderComplete} disabled={order}>Оформить заказ</button>
         </div>
+      {order && 
+      <div style={{display: "flex", justifyContent: "space-between", alignItems: "center", flexDirection: "column", marginTop: 50}}>
+      <h2>Заказ оформлен</h2> 
+      <img src="img/orderComplete.png" alt="orderComplete"/>
+      </div>
+      }
       </div>
     </div>
   );

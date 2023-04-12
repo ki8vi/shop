@@ -92,7 +92,7 @@ const isFavorAdded = (id) => {
 }
 
   return (
-    <Context.Provider value={{items, cartDrawer, favor, isItemAdded, isFavorAdded}}>
+    <Context.Provider value={{items, cartDrawer, favor, isItemAdded, isFavorAdded, setCartDrawer}}>
     <div className="wrapper" >
     {isDrawer && <Drawer drawer = {isDrawer} handle= {()=>setIsDrawer(!isDrawer)} cart={cartDrawer} removeCart={removeCart} totalSum={totalSum} /> }
     
