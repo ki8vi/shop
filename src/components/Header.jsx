@@ -2,9 +2,11 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import {GrFavorite} from "react-icons/gr";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Context } from "../context";
 
 const Header = ({drawer, handle}) => {
-  
+const {orderCount} = useContext(Context)
   
     return (
     <header className="header">
@@ -23,7 +25,7 @@ const Header = ({drawer, handle}) => {
           <li className="drawerBtn" onClick={handle}>
             
             <MdOutlineShoppingCart />
-            <span>500$</span>
+            <span>{orderCount}</span>
           </li>
           <li>
             <CgProfile />

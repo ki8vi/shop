@@ -4,7 +4,7 @@ import { Context } from "../../../context";
 
 
 const Favorite = ({addFavor}) => {
-const {favor} = useContext(Context)
+const {favor, addCart} = useContext(Context)
 
     return (
         <>
@@ -19,7 +19,7 @@ const {favor} = useContext(Context)
                 key={el.id}
                 favorited={true}
                 addFavor={addFavor}
-                
+                // addCart={addCart}
             />
         )}
         </div>

@@ -2,7 +2,7 @@ import Card from "./Pages/Card/Card";
 import { CiSearch } from "react-icons/ci"
 import { MdCancel } from "react-icons/md"
 
-const Content = ({items, addCart, onChangeSearch, search, setSearch, addFavor, }) => {
+const Content = ({items, addCart, onChangeSearch, search, setSearch, addFavor}) => {
     
     return (
         <>
@@ -25,6 +25,7 @@ const Content = ({items, addCart, onChangeSearch, search, setSearch, addFavor, }
                     key={el.id}
                     onPlus={(obj) =>addCart(obj)}
                     addFavor={(obj)=>addFavor(obj)}
+                
                     />
                 )}
                 

@@ -16,6 +16,7 @@ function App() {
   const [cartDrawer, setCartDrawer] = React.useState([])
   const [favor, setFavor] = React.useState([])
   const [search, setSearch] = React.useState('')
+  const [orderCount, setOrderCount] = React.useState(0)
 
   const addFavor = (obj) => {
     // let isIn = true
@@ -54,7 +55,7 @@ React.useEffect(() => {
 
 }, []);
 
-let totalSum = 0
+
 
 const addCart = (obj) => {
   
@@ -72,16 +73,19 @@ const addCart = (obj) => {
   //   }
   if(cartDrawer.find((item) => item.id === obj.id)) {
     setCartDrawer((prev) => prev.filter(el => el.id !== obj.id))
+    setOrderCount(prev => prev -= obj.price)
+    
   } else {
     setCartDrawer(prev => [...prev, obj])
-    totalSum += obj.price
+    setOrderCount(prev => prev += obj.price)
+    
+    
   }
 }
 
-const removeCart = (id) => {
-  
-  setCartDrawer((prev) => prev.filter(el => el.id !== id))
-   
+const removeCart = (obj) => {
+  setCartDrawer((prev) => prev.filter(el => el.id !== obj.id))
+  setOrderCount(prev => prev -= obj.price)
 }
 const isItemAdded = (id) => {
   return cartDrawer.some(obj => obj.id === id)
@@ -92,13 +96,13 @@ const isFavorAdded = (id) => {
 }
 
   return (
-    <Context.Provider value={{items, cartDrawer, favor, isItemAdded, isFavorAdded, setCartDrawer}}>
+    <Context.Provider value={{items, cartDrawer, favor, isItemAdded, isFavorAdded, setCartDrawer, orderCount, addCart}}>
     <div className="wrapper" >
-    {isDrawer && <Drawer drawer = {isDrawer} handle= {()=>setIsDrawer(!isDrawer)} cart={cartDrawer} removeCart={removeCart} totalSum={totalSum} /> }
+    {isDrawer && <Drawer drawer = {isDrawer} handle= {()=>setIsDrawer(!isDrawer)} removeCart={removeCart} cartDrawer={cartDrawer} /> }
     
       <Header drawer = {isDrawer} handle = {()=> setIsDrawer(!isDrawer)}/>
     <Routes> 
-      <Route path="/" element=<Content items= {items} addCart={addCart} onChangeSearch={onChangeSearch} search={search} setSearch={setSearch} addFavor={addFavor}/> />
+      <Route path="/" element=<Content items= {items} addCart={addCart} onChangeSearch={onChangeSearch} search={search} setSearch={setSearch} addFavor={addFavor} /> />
       <Route path="/favorite" element=<Favorite favor={favor} addFavor={addFavor} addCart={addCart}/>/>
     </Routes>
     

@@ -15,7 +15,7 @@ import { Context } from "../../../context";
         onPlus, 
         addFavor,  
         favorited,
-         
+        
     }) => {
     
     const [isAdded, setIsAdded] = React.useState();
