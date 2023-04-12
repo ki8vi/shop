@@ -87,8 +87,12 @@ const isItemAdded = (id) => {
   return cartDrawer.some(obj => obj.id === id)
 }
 
+const isFavorAdded = (id) => {
+  return favor.some(obj => obj.id === id)
+}
+
   return (
-    <Context.Provider value={{items, cartDrawer, favor, isItemAdded}}>
+    <Context.Provider value={{items, cartDrawer, favor, isItemAdded, isFavorAdded}}>
     <div className="wrapper" >
     {isDrawer && <Drawer drawer = {isDrawer} handle= {()=>setIsDrawer(!isDrawer)} cart={cartDrawer} removeCart={removeCart} totalSum={totalSum} /> }
     

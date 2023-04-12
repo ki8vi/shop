@@ -15,14 +15,14 @@ import { Context } from "../../../context";
         onPlus, 
         addFavor,  
         favorited,
-        loading 
+         
     }) => {
     
     const [isAdded, setIsAdded] = React.useState();
     const [isFavor, setIsFavor] = React.useState(favorited);
 
 
-    const {isItemAdded} = React.useContext(Context);
+    const {isItemAdded, isFavorAdded} = React.useContext(Context);
     
     const iLike = () => {
         setIsFavor(!isFavor);
@@ -42,7 +42,7 @@ import { Context } from "../../../context";
         
         
         <div className={styles.card} >
-            <div onClick={iLike}>{isFavor ? <FcLike/> : <FcLikePlaceholder />}</div>
+            <div onClick={iLike}>{isFavorAdded(id) ? <FcLike/> : <FcLikePlaceholder />}</div>
             <img src={image} alt="img"/>
             <p>{title}</p>
             {/* <span>{el.description}</span> */}
