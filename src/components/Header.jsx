@@ -25,7 +25,7 @@ const {orderCount} = useContext(Context)
           <li className="drawerBtn" onClick={handle}>
             
             <MdOutlineShoppingCart />
-            <span>{orderCount}</span>
+            <span>{orderCount.toFixed(2)}</span>
           </li>
           <li>
             <CgProfile />

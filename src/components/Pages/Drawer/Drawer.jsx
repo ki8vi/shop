@@ -43,11 +43,11 @@ const orderComplete = () => {
           <ul>
             <li>
               <span>Итого:</span>
-              <b>{orderCount}</b>
+              <b>{orderCount.toFixed(2)}</b>
             </li>
             <li>
               <span>Налог 5%:</span>
-              <b>{orderCount*5/100}</b>
+              <b>{(orderCount*5/100).toFixed(2)}</b>
             </li>
           </ul>
           <button onClick={orderComplete} disabled={order}>Оформить заказ</button>
