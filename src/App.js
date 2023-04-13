@@ -75,6 +75,7 @@ const addCart = (obj) => {
     setCartDrawer((prev) => prev.filter(el => el.id !== obj.id))
     setOrderCount(prev => prev -= obj.price)
     
+    
   } else {
     setCartDrawer(prev => [...prev, obj])
     setOrderCount(prev => prev += obj.price)
@@ -96,7 +97,7 @@ const isFavorAdded = (id) => {
 }
 
   return (
-    <Context.Provider value={{items, cartDrawer, favor, isItemAdded, isFavorAdded, setCartDrawer, orderCount, addCart}}>
+    <Context.Provider value={{items, cartDrawer, favor, isItemAdded, isFavorAdded, setCartDrawer, orderCount, addCart, setOrderCount}}>
     <div className="wrapper" >
     {isDrawer && <Drawer drawer = {isDrawer} handle= {()=>setIsDrawer(!isDrawer)} removeCart={removeCart} cartDrawer={cartDrawer} /> }
     

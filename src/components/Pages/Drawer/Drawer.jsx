@@ -5,7 +5,7 @@ import React from "react";
 
 
 const Drawer = ({handle, removeCart, cartDrawer}) => {
-const {setCartDrawer, orderCount} = React.useContext(Context)
+const {setCartDrawer, orderCount, setOrderCount} = React.useContext(Context)
 
 const [order, setOrder] = React.useState()
 
@@ -13,6 +13,7 @@ const orderComplete = () => {
   setCartDrawer([]);
   if(cartDrawer.length !== 0) {
     setOrder(true)
+    setOrderCount(0)
   }
 }
 
