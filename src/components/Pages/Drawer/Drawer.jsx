@@ -14,7 +14,7 @@ const orderComplete = () => {
   setCartDrawer([]);
   if(cartDrawer.length !== 0) {
     setOrder(true)
-    setOrderCount(0)
+    
   }
 }
 
