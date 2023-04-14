@@ -2,11 +2,10 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import {GrFavorite} from "react-icons/gr";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { Context } from "../context";
+import { useCart } from "./Hooks/useCart";
 
 const Header = ({drawer, handle}) => {
-const {orderCount} = useContext(Context)
+const {totalSum} = useCart()
   
     return (
     <header className="header">
@@ -25,7 +24,7 @@ const {orderCount} = useContext(Context)
           <li className="drawerBtn" onClick={handle}>
             
             <MdOutlineShoppingCart />
-            <span>{orderCount.toFixed(2)}</span>
+            <span>{totalSum}</span>
           </li>
           <li>
             <CgProfile />

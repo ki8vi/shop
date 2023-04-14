@@ -16,7 +16,7 @@ function App() {
   const [cartDrawer, setCartDrawer] = React.useState([])
   const [favor, setFavor] = React.useState([])
   const [search, setSearch] = React.useState('')
-  const [orderCount, setOrderCount] = React.useState(0)
+  
 
   const addFavor = (obj) => {
     // let isIn = true
@@ -73,12 +73,12 @@ const addCart = (obj) => {
   //   }
   if(cartDrawer.find((item) => item.id === obj.id)) {
     setCartDrawer((prev) => prev.filter(el => el.id !== obj.id))
-    setOrderCount(prev => prev -= obj.price)
+    
     
     
   } else {
     setCartDrawer(prev => [...prev, obj])
-    setOrderCount(prev => prev += obj.price)
+    
     
     
   }
@@ -86,7 +86,7 @@ const addCart = (obj) => {
 
 const removeCart = (obj) => {
   setCartDrawer((prev) => prev.filter(el => el.id !== obj.id))
-  setOrderCount(prev => prev -= obj.price)
+  
 }
 const isItemAdded = (id) => {
   return cartDrawer.some(obj => obj.id === id)
@@ -97,7 +97,7 @@ const isFavorAdded = (id) => {
 }
 
   return (
-    <Context.Provider value={{items, cartDrawer, favor, isItemAdded, isFavorAdded, setCartDrawer, orderCount, addCart, setOrderCount}}>
+    <Context.Provider value={{items, cartDrawer, favor, isItemAdded, isFavorAdded, setCartDrawer, addCart}}>
     <div className="wrapper" >
     {isDrawer && <Drawer drawer = {isDrawer} handle= {()=>setIsDrawer(!isDrawer)} removeCart={removeCart} cartDrawer={cartDrawer} /> }
     

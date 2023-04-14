@@ -2,10 +2,11 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import styles from "./Drawer.module.scss";
 import { Context } from "../../../context";
 import React from "react";
-
+import { useCart } from "../../Hooks/useCart";
 
 const Drawer = ({handle, removeCart, cartDrawer}) => {
-const {setCartDrawer, orderCount, setOrderCount} = React.useContext(Context)
+const {totalSum} = useCart();
+const {setCartDrawer, setOrderCount} = React.useContext(Context)
 
 const [order, setOrder] = React.useState()
 
@@ -43,11 +44,11 @@ const orderComplete = () => {
           <ul>
             <li>
               <span>Итого:</span>
-              <b>{orderCount.toFixed(2)}</b>
+              <b>{totalSum}</b>
             </li>
             <li>
               <span>Налог 5%:</span>
-              <b>{(orderCount*5/100).toFixed(2)}</b>
+              <b>{(totalSum*5/100).toFixed(2)}</b>
             </li>
           </ul>
           <button onClick={orderComplete} disabled={order}>Оформить заказ</button>
