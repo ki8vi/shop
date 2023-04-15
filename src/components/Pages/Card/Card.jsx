@@ -12,7 +12,7 @@ import { Context } from "../../../context";
         title, 
         price, 
         id, 
-        onPlus, 
+        addCart, 
         addFavor,  
         favorited,
         
@@ -26,11 +26,11 @@ import { Context } from "../../../context";
     
     const iLike = () => {
         setIsFavor(!isFavor);
-        addFavor({id, price, title, image, onPlus, addFavor})
+        addFavor({id, price, title, image, addCart, addFavor})
     }
     
     const setFavorite = () => {
-        onPlus({image, title, price, id})
+        addCart({image, title, price, id})
         setIsAdded(!isAdded)
         
     };

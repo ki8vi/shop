@@ -6,7 +6,7 @@ import { useCart } from "../../Hooks/useCart";
 
 const Drawer = ({handle, removeCart, cartDrawer}) => {
 const {totalSum} = useCart();
-const {setCartDrawer, setOrderCount} = React.useContext(Context)
+const {setCartDrawer} = React.useContext(Context)
 
 const [order, setOrder] = React.useState()
 

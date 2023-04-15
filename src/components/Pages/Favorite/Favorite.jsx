@@ -19,7 +19,7 @@ const {favor, addCart} = useContext(Context)
                 key={el.id}
                 favorited={true}
                 addFavor={addFavor}
-                // addCart={addCart}
+                addCart={()=>addCart(el)}
             />
         )}
         </div>

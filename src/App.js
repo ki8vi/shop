@@ -73,14 +73,8 @@ const addCart = (obj) => {
   //   }
   if(cartDrawer.find((item) => item.id === obj.id)) {
     setCartDrawer((prev) => prev.filter(el => el.id !== obj.id))
-    
-    
-    
   } else {
     setCartDrawer(prev => [...prev, obj])
-    
-    
-    
   }
 }
 
