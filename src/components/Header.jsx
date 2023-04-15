@@ -27,7 +27,10 @@ const {totalSum} = useCart()
             <span>{totalSum}</span>
           </li>
           <li>
-            <CgProfile />
+          <Link to="/orders">
+            <CgProfile className="prof"/>
+          </Link>
+            
           </li>
         </ul>
     </header>

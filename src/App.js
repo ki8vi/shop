@@ -8,6 +8,7 @@ import axios from "axios";
 import {Routes, Route} from "react-router-dom"
 import Favorite from "./components/Pages/Favorite/Favorite";
 import { Context } from "./context";
+import Order from "./components/Pages/Order/Order";
 
 
 function App() {
@@ -99,6 +100,7 @@ const isFavorAdded = (id) => {
     <Routes> 
       <Route path="/" element=<Content items= {items} addCart={addCart} onChangeSearch={onChangeSearch} search={search} setSearch={setSearch} addFavor={addFavor} /> />
       <Route path="/favorite" element=<Favorite favor={favor} addFavor={addFavor} addCart={addCart}/>/>
+      <Route path="/orders" element=<Order/>/>
     </Routes>
     
     

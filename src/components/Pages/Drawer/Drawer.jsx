@@ -30,7 +30,7 @@ const orderComplete = () => {
             <img src={el.image} alt="drawer-item"/>
             <div className="drawer-item-btn" >
               <p>{el.title}</p>
-              <b>{el.price}</b>
+              <b> {el.price} $</b>
             </div>
             <AiOutlineCloseCircle onClick={()=>{removeCart(el)}}/>
           </div>
@@ -44,11 +44,11 @@ const orderComplete = () => {
           <ul>
             <li>
               <span>Итого:</span>
-              <b>{totalSum}</b>
+              <b> {totalSum} $</b>
             </li>
             <li>
               <span>Налог 5%:</span>
-              <b>{(totalSum*5/100).toFixed(2)}</b>
+              <b> {(totalSum*5/100).toFixed(2)} $</b>
             </li>
           </ul>
           <button onClick={orderComplete} disabled={order}>Оформить заказ</button>

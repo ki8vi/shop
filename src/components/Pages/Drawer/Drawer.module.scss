@@ -7,6 +7,8 @@
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
     .drawer {
+      // display: flex;
+      // flex-direction: column;
       position: absolute;
       width: 350px;
       height: 100%;
@@ -25,12 +27,15 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
         border: 1px solid #f3f3f3;
         border-radius: 15px;
         padding: 10px;
         
+        p {
+          width: 150px;
+        }
         img {
           width: 70px;
           height: 70px;
@@ -70,19 +75,26 @@
   .items {
     display: flex;
     flex-direction: column;
-    
+       
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid #f3f3f3;
     ul {
       padding: 0;
     }
     button {
+      width: auto;
       border-radius: 15px;
       margin-top: 30px;
-      background-color: #d6cccc;
+      background-color: rgba(28, 3, 15, 0.886);
       padding: 4px;
+      color: white;
       cursor: pointer;
-      border: 1px solid rgb(146, 146, 146);
+      border: 1px solid rgb(194, 208, 194);
       &:hover {
-        background-color: rgba(71, 68, 68, 0.47);
+        background-color: rgba(231, 225, 225, 0.021);
+        color: black;
       }
     }
   }

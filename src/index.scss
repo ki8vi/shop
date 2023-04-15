@@ -52,12 +52,16 @@ header {
   .headerRight {
     display: flex;
     align-items: center;
+    .prof {
+      color: white;
+    }
     .svg {
       background: white;
       width: 28px;
       border-radius: 10px;
       margin-right: 23px;
       cursor: pointer;
+      
     }
     li {
       margin-right: 30px;

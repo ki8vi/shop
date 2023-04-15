@@ -42,15 +42,18 @@ import { Context } from "../../../context";
         
         
         <div className={styles.card} >
-            <div onClick={iLike}>{isFavorAdded(id) ? <FcLike/> : <FcLikePlaceholder />}</div>
+            {addCart && <div onClick={iLike}>{isFavorAdded(id) ? <FcLike/> : <FcLikePlaceholder />}</div>}
             <img src={image} alt="img"/>
             <p>{title}</p>
             {/* <span>{el.description}</span> */}
             <div className={styles.cardButton}>
                 <b>Price: {price} $</b>
-                <button onClick={setFavorite}>
+                {addCart &&
+                    <button onClick={setFavorite}>
                     {isItemAdded(id) ? <FaCheck /> : <TiPlusOutline />}
                 </button>
+                }
+                
             </div>
         </div>
         
