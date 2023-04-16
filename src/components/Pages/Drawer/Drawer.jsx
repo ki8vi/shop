@@ -56,7 +56,7 @@ const orderComplete = () => {
       {order && 
       <div style={{display: "flex", justifyContent: "space-between", alignItems: "center", flexDirection: "column", marginTop: 50}}>
       <h2>Заказ оформлен</h2> 
-      <img src="img/orderComplete.png" alt="orderComplete"/>
+      <img src="../../../../public/img/orderComplete.png" alt="orderComplete"/>
       </div>
       }
       </div>
