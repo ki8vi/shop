@@ -98,7 +98,7 @@ const isFavorAdded = (id) => {
     
       <Header drawer = {isDrawer} handle = {()=> setIsDrawer(!isDrawer)}/>
     <Routes> 
-      <Route path="/" element=<Content items= {items} addCart={addCart} onChangeSearch={onChangeSearch} search={search} setSearch={setSearch} addFavor={addFavor} /> />
+      <Route path="/shop" element={<Content items= {items} addCart={addCart} onChangeSearch={onChangeSearch} search={search} setSearch={setSearch} addFavor={addFavor} />} />
       <Route path="/favorite" element=<Favorite favor={favor} addFavor={addFavor} addCart={addCart}/>/>
       <Route path="/orders" element=<Order/>/>
     </Routes>

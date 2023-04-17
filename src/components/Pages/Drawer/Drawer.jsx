@@ -3,6 +3,7 @@ import styles from "./Drawer.module.scss";
 import { Context } from "../../../context";
 import React from "react";
 import { useCart } from "../../Hooks/useCart";
+import {MdOutlineDoneOutline} from "react-icons/md"
 
 const Drawer = ({handle, removeCart, cartDrawer}) => {
 const {totalSum} = useCart();
@@ -55,8 +56,8 @@ const orderComplete = () => {
         </div>
       {order && 
       <div style={{display: "flex", justifyContent: "space-between", alignItems: "center", flexDirection: "column", marginTop: 50}}>
-      <h2>Заказ оформлен</h2> 
-      <img src="../../../../public/img/orderComplete.png" alt="orderComplete"/>
+      <h2>Заказ оформлен <MdOutlineDoneOutline /></h2> 
+      
       </div>
       }
       </div>

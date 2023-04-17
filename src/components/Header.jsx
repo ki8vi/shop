@@ -9,7 +9,7 @@ const {totalSum} = useCart()
   
     return (
     <header className="header">
-        <Link to="/">
+        <Link to="/shop">
         <div className="headerLeft">
           <img src="img/logo.jpg" alt="logo"/>
           <div className="headerInfo">
